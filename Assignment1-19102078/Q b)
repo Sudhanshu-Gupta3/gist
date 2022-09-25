@@ -1,0 +1,29 @@
+//b) Implement a stack to check if a string has balanced usage of parentheses
+bool isBalanced(string b) 
+{
+    stack<char> s;
+    
+    for(int i=0;b[i]!='\0';i++){
+        if(b[0]==')')
+        {
+            return false;
+        }
+        if(b[i]=='(')
+        {
+           s.push(')');    
+        }
+        else{
+            if(s.size() ==0){
+                return false;
+            }
+            s.pop();
+        }
+        
+    }
+    
+    if(s.size()==0){
+        return true;
+    }
+    else
+     return false;    
+}
